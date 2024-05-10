@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import UserMenu from "./UserMenu";
 import { useAppStore } from "../../../store/appStore";
 import API from "../../../utils/axios";
+import{BsSearch} from "react-icons/bs";
 
 const Header = () => {
   const { user, totalCart } = useAppStore();
@@ -26,14 +27,26 @@ const Header = () => {
   }, [user]);
 
   return (
-    <header className="bg-white z-10 border-b-[1px] sticky top-0 text-black backdrop-blur-lg px-5 py-4 flex items-center justify-between">
+    <header className="bg-[#212429] z-10 border-b-[1px] sticky top-0 text-white backdrop-blur-lg px-5 py-4 flex items-center justify-between">
       <div className="">
         <h2
           onClick={() => navigate("/")}
           className="font-extrabold text-[26px] cursor-pointer tracking-wide sm:tracking-widest"
         >
-          Shopping Cart
+          GenDA
         </h2>
+        <div className="input-group ">
+          <input 
+          type="text" 
+          className="form-control py-2" 
+          placeholder="Search Product here" 
+          aria-label="Search Product here" 
+          aria-describedby="basic-addon2"
+          />
+          <span className="input-group-text p-3" id="basic-addon2">
+            <BsSearch className="fs-6"/>
+          </span>
+      </div>
       </div>
       <div className="hidden sm:block">
         <ul className="flex items-center gap-3 text-[18px] font-semibold">
@@ -89,6 +102,9 @@ const Header = () => {
         {showMenu && <UserMenu setShowMenu={setShowMenu} />}
       </div>
     </header>
+
+    
+    
   );
 };
 
