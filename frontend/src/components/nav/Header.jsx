@@ -55,7 +55,7 @@ const Header = () => {
               to={"/"}
               className={({ isActive }) => (isActive ? "text-blue-400" : "")}
             >
-              Home
+              Homee
             </NavLink>
           </li>
           {!user && (
