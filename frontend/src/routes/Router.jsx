@@ -26,7 +26,8 @@ const Layout = () => {
       <Header1 />
       <Header />
       <Outlet />
-    </>
+      
+      </>
   );
 };
 
